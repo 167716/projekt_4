@@ -27,6 +27,9 @@ class Main {
               catch(WrongAge e) {
               System.out.println("Błędny wiek!");
             }
+          catch(WrongDateOfBirth e) {
+              System.out.println("Błędna data urodzenia!");
+            }
         }
     }
 
@@ -59,12 +62,12 @@ class Main {
       }
         System.out.println("Podaj datę urodzenia DD-MM-YYY");
         var date = scan.nextLine();
-      char a = date.charAt(2);
-      char b = date.charAt(5);
-      if(a!="-"||b!="-"){
+      //char a = date.charAt(2);
+      //char b = date.charAt(5);
+      if(date.charAt(2)!='-'||date.charAt(5)!='-')
       throw new WrongDateOfBirth();
-      }
-        (new Service1()).addStudent(new Student(name, age, date));
+      
+        (new Service1()).addStudent(new       Student(name, age, date));
     }
 
     public static void exercise2() throws IOException {
